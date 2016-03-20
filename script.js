@@ -1,21 +1,17 @@
-for(var i = 0; i < 40; i++) {
-var square = document.createElement('div');
-var black = document.querySelector('body').appendChild(square).style;
-black.backgroundColor = "black";
-black.width = "11.1%";
-black.paddingBottom = "11.1%";
-black.float = "left";
-var square = document.createElement('div');
-var red = document.querySelector('body').appendChild(square).style;
-red.backgroundColor = "red";
-red.width = "11.1%";
-red.paddingBottom = "11.1%";
-red.float = "left";
+function rand() {
+  return "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
 }
-// Uneven board. Necessary for last black square
+function cb(){
+for(var i = 0; i < 81; i++) {
+if (document.querySelectorAll('div')[i]){
+  document.querySelectorAll('div')[i].remove();
+}
 var square = document.createElement('div');
 var black = document.querySelector('body').appendChild(square).style;
-black.backgroundColor = "black";
+black.backgroundColor = rand();
 black.width = "11.1%";
 black.paddingBottom = "11.1%";
 black.float = "left";
+}
+}
+setInterval(cb, 2000);
